@@ -1,49 +1,21 @@
-import React, { ReactNode } from "react";
-import Header from "./Header";
+import { Navbar, NavbarBrand } from 'flowbite-react';
+import React, { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
 };
 
 const Layout: React.FC<Props> = (props) => (
+  // <Header />
   <div>
-    <Header />
-    <div className="layout">{props.children}</div>
-    <style jsx global>{`
-      html {
-        box-sizing: border-box;
-      }
-
-      *,
-      *:before,
-      *:after {
-        box-sizing: inherit;
-      }
-
-      body {
-        margin: 0;
-        padding: 0;
-        font-size: 16px;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-          "Segoe UI Symbol";
-        background: rgba(0, 0, 0, 0.05);
-      }
-
-      input,
-      textarea {
-        font-size: 16px;
-      }
-
-      button {
-        cursor: pointer;
-      }
-    `}</style>
-    <style jsx>{`
-      .layout {
-        padding: 0 2rem;
-      }
-    `}</style>
+    <Navbar fluid className='border-b m-2'>
+      <NavbarBrand>
+        <span className='self-center whitespace-nowrap text-xl font-bold dark:text-white'>
+          Green Scan
+        </span>
+      </NavbarBrand>
+    </Navbar>
+    <div className='flex m-2'>{props.children}</div>
   </div>
 );
 
